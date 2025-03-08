@@ -1,0 +1,14 @@
+<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text x="10" y="60" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="white">H</text>
+  <text x="60" y="60" font-family="Arial, sans-serif" font-size="60" font-weight="lighter" fill="white">a</text>
+  <text x="95" y="60" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="white">r</text>
+  <text x="125" y="60" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="white">s</text>
+  <text x="155" y="60" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="url(#gradient)">h</text>
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF00FF"/>
+      <stop offset="100%" stop-color="#FF66CC"/>
+    </linearGradient>
+  </defs>
+  <circle cx="185" cy="55" r="8" fill="url(#gradient)"/>
+</svg>
