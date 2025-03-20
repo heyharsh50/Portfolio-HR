@@ -3,6 +3,8 @@ import './MyWork.css'
 import theme_pattern from '../../assets/theme_pattern.svg'
 import mywork_data from '../../assets/mywork_data'
 import arrow_icon  from '../../assets/arrow_icon.svg'
+import github_icon from '../../assets/github_icon.svg'; // Add GitHub icon
+
 
 const MyWork = () => {
   return (
@@ -16,10 +18,9 @@ const MyWork = () => {
             return <img key={index} src={work.w_img} alt="" />
         })}
       </div>
-      <div className="mywork-showmore">
-        <p>Show More</p>
-        <img src={arrow_icon} alt="" />
-      </div>
+      <a href="https://github.com/your-github-profile" target="_blank" rel="noopener noreferrer" className="github-button">
+        More projects on <img src={github_icon} alt="GitHub" />
+      </a>
     </div>
   )
 }
