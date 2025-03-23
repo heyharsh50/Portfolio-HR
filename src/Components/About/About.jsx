@@ -1,47 +1,67 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './About.css'
 import theme_pattern from '../../assets/theme_pattern.svg'
-import profile_img from '../../assets/about_profile.svg'
-
+import LetterGlitch from './LetterGlitch'
 
 const About = () => {
+  const [expandedService, setExpandedService] = useState(null);
+
+  const toggleService = (serviceName) => {
+    if (expandedService === serviceName) {
+      setExpandedService(null);
+    } else {
+      setExpandedService(serviceName);
+    }
+  };
+
   return (
     <div id='about' className='about'>
       <div className="title-box">
-        <h1>About me</h1>
+        <h1>What I do?</h1>
         <img src={theme_pattern} alt="" />
       </div>
       <div className="about-sections">
         <div className="about-left">
-            <img src={profile_img} alt="" />
+          <div className="glitch-container">
+            <LetterGlitch
+              glitchColors={['#DF8908', '#B415FF', '#61b3dc']}
+              glitchSpeed={33}
+              centerVignette={false}
+              outerVignette={true}
+              smooth={true}
+            />
+          </div>
         </div>
         <div className="about-right">
-            <div className="about-para">
-                <p>I am an experienced Frontend Developer with over a decade of professional expertise in the field. Throughout my career, I have had the privilege of collaborating with prestigious organizations, contributing to their success and growth.</p>
-                <p>My passion for frontend development is not only reflected in my extensive experience but also in the enthusiasm and dedication I bring to each project.</p>
+          <div className="services">
+            <div className={`service ${expandedService === 'web' ? 'expanded' : ''}`} onClick={() => toggleService('web')}>
+              <div className="service-header">
+                <h2>Web Development</h2>
+                <span className="dropdown-arrow">▼</span>
+              </div>
+              <ul className="service-content">
+                <li>Single Page Applications (SPAs)</li>
+                <li>Landing pages and business websites</li>
+                <li>Portfolio websites</li>
+                <li>E-commerce solutions</li>
+                <li>Custom web applications</li>
+              </ul>
             </div>
-            <div className="about-skills">
-                <div className="about-skill"><p>HTML & CSS</p><hr style={{width:"50%"}} /></div>
-                <div className="about-skill"><p>React JS</p><hr style={{width:"70%"}} /></div>
-                <div className="about-skill"><p>JavaScript</p><hr style={{width:"60%"}} /></div>
-                <div className="about-skill"><p>Next JS</p><hr style={{width:"50%"}} /></div>
+            
+            <div className={`service ${expandedService === 'uiux' ? 'expanded' : ''}`} onClick={() => toggleService('uiux')}>
+              <div className="service-header">
+                <h2>UI/UX Design & Prototyping</h2>
+                <span className="dropdown-arrow">▼</span>
+              </div>
+              <ul className="service-content">
+                <li>User Interface Design</li>
+                <li>User Experience Design</li>
+                <li>Interactive Prototypes</li>
+                <li>Wireframing and mockups</li>
+                <li>Design systems</li>
+              </ul>
             </div>
-        </div>
-      </div>
-      <div className="about-achievements">
-        <div className="about-achievement">
-            <h1>10+</h1>
-            <p>YEARS OF EXPERIENCE</p>
-        </div>
-        <hr />
-        <div className="about-achievement">
-            <h1>90+</h1>
-            <p>PROJECTS COMPLETED</p>
-        </div>
-        <hr />
-        <div className="about-achievement">
-            <h1>15+</h1>
-            <p>HAPPY CLIENTS</p>
+          </div>
         </div>
       </div>
     </div>
