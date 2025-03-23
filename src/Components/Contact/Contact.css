@@ -62,17 +62,27 @@
 }
 
 .contact-right input, .contact-right textarea{
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     width: 100%;
-    padding: 18px 0;
-    padding-left: 20px;
-    border-radius: 4px;
-    background: #32323c;
-    color: #A0A0A0;
+    padding: 18px 16px;
+    border-radius: 8px;
+    background: rgba(20, 20, 20, 0.61);
+    color: white;
     font-family: Outfit;
-    font-size: 18px;
+    font-size: 16px;
+    outline: none;
 }
 
+.contact-right textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact-right input:focus, .contact-right textarea:focus {
+    outline: none;
+    border-color: #DF8908;
+    box-shadow: 0 0 0 2px rgba(223, 137, 8, 0.2);
+}
 
 .contact-submit{
     border: none;
